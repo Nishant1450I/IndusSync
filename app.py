@@ -12,7 +12,8 @@ st.set_page_config(
 st.title("6G Network Performance & Manufacturing Efficiency")
 st.write("Smart Factory Network Analytics Dashboard")
 
-file_path = r"C:\Users\Nishant\OneDrive\Documents\IndusSync\Data\Thales_Group_Manufacturing.csv"
+
+file_path = "Data/Thales_Group_Manufacturing.csv"
 
 @st.cache_data
 def load_data():
@@ -20,6 +21,7 @@ def load_data():
     return data
 
 df = load_data()
+
 
 if "Timestamp" in df.columns:
     df["Timestamp"] = pd.to_datetime(
